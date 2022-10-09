@@ -2,8 +2,7 @@ function contacto() {
   console.log("hola mundo");
 }
 
-console.log("hola mundo");
-
+console.log(this);
 
 window.addEventListener("scroll", function () {
   var header = document.querySelector("header");
