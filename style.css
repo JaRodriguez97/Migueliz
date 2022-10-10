@@ -256,7 +256,7 @@ footer {
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 661px) {
   /* corregir cuando hace scroll al menú en responsive */
   /* header.sticky > .menu.active {
     transition: 0ms;
