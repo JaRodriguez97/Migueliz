@@ -19,7 +19,7 @@ let container = document.getElementById("container"),
     },
     autoplay: {
       delay: 1500,
-      disableOnInteraction: false,
+      disableOnInteraction: true,
     },
   },
   swiper;

@@ -10,7 +10,7 @@
 body {
   background-color: #333;
   transition: 1s;
-  /* overflow: hidden; */
+  overflow-x: hidden;
 }
 
 header {
@@ -75,16 +75,111 @@ header.sticky > ul > li > a {
 }
 
 .wrap {
-  padding: 10% 0;
+  padding: 5% 0;
   bottom: 0;
   min-height: 100vh;
   display: flex;
-  /* max-width: 100vw;
-   position: absolute;*/
   align-items: center;
   justify-content: center;
-  background: url(/assets/images/burguerWhitCheese.jpg);
+  background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent),
+    url(/assets/images/backgrounds/burguerWhitCheese.jpg);
   background-size: 100% 100%;
+}
+
+.wrap > .container-fluid {
+  overflow: hidden;
+}
+
+.wrap > .container-fluid > div.title {
+  text-align: center;
+  padding: 1%;
+  margin: 1%;
+}
+
+.container-fluid > div.title > h2 {
+  margin: 2%;
+  color: #fff;
+  font-size: 350%;
+  -webkit-text-stroke: 1px #444;
+}
+
+#section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1), transparent),
+    url(/assets/images/backgrounds/adicionPapas.jpg);
+  background-size: 100% 100%;
+}
+
+.containerBg {
+  padding: relative;
+  width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+.containerBg > .card {
+  width: 100%;
+  background: #fff;
+}
+
+.containerBg > .card > .imgBx {
+  position: relative;
+  width: 100%;
+  height: 310px;
+  overflow: hidden;
+}
+
+.containerBg > .card > .imgBx > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 500ms ease-in-out;
+  transform-origin: right;
+}
+
+.containerBg > .card:active > .imgBx > img,
+.containerBg > .card:hover > .imgBx > img {
+  transform: scale(1.5);
+}
+
+.containerBg > .card > .content {
+  padding: 10px;
+}
+
+.containerBg > .card > .content > .productName > h3 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  margin: 5px 0;
+}
+
+.containerBg > .card > .content > .priceRating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.containerBg > .card > .content > .priceRating > h2 {
+  font-size: 20px;
+  color: #ff2020;
+  font-weight: 500;
+}
+
+.containerBg > .card > .content > .priceRating .fa {
+  color: #ffd513;
+  cursor: pointer;
+}
+
+.containerBg > .card > .content > .priceRating .fa.grey {
+  color: #ccc;
 }
 
 .swiper-container {
@@ -98,9 +193,14 @@ header.sticky > ul > li > a {
   background-size: cover;
   width: 300px !important;
   min-width: 300px;
+  padding: 0 !important;
 }
 
-.price-table {
+.col-sm-4.scale {
+  transform: scale(1.1);
+}
+
+.col-sm-4 > .price-table {
   text-align: center;
   overflow: hidden;
   margin: 5.558%;
@@ -110,33 +210,29 @@ header.sticky > ul > li > a {
   border-radius: 20px;
 }
 
-.scale {
-  transform: scale(1.1);
-}
-
-.price-table .price-head {
-  padding: 15%;
+.col-sm-4 > .price-table > .price-head {
+  padding-top: 15%;
   padding-bottom: 40%;
   border-bottom-left-radius: 30%;
   border-bottom-right-radius: 30%;
-  background-position: 50% 30%;
-  background-size: cover;
+  background-position: 50% 30% !important;
+  background-size: cover !important;
   -webkit-text-stroke: 0.5px #db0000;
 }
 
-.col-sm-4:nth-child(1) .price-head {
-  background-image: url("/assets/images/comboBurguerPapas.jpg");
+.col-sm-4:nth-child(1) > .price-table > .price-head {
+  background: url("/assets/images/cards/comboBurguerPapas.jpg");
 }
 
-.col-sm-4:nth-child(2) .price-head {
-  background-image: url("/assets/images/superBurguer.jpg");
+.col-sm-4:nth-child(2) > .price-table > .price-head {
+  background-image: url("/assets/images/cards/superBurguer.jpg");
 }
 
-.col-sm-4:nth-child(3) .price-head {
-  background-image: url("/assets/images/comboHotDogs.jpg");
+.col-sm-4:nth-child(3) > .price-table > .price-head {
+  background-image: url("/assets/images/cards/comboHotDogs.jpg");
 }
 
-.price-table .price-head h4 {
+.price-table > .price-head > h4 {
   text-transform: uppercase;
   margin: 0;
   padding: 0;
@@ -185,11 +281,10 @@ header.sticky > ul > li > a {
 
 .price-button a:active {
   box-shadow: inset 5em 5em 5em 5em rgba(0, 0, 0, 0.2);
-  /* 5px 5px 5px 5px rgba(0, 0, 0, 0.2); */
 }
 
 .price-button a {
-  padding: 10px 40px;
+  padding: 5% 10%;
   background: #000;
   color: #fff !important;
   border-radius: 25px;
@@ -197,4 +292,21 @@ header.sticky > ul > li > a {
   text-transform: uppercase;
   text-decoration: none !important;
   background: linear-gradient(45deg, #b85402, #db0000);
+}
+
+/*
+* Responsive
+*/
+@media (max-width: 769px) {
+  .wrap {
+    padding: 10% 0;
+  }
+  .wrap > .container-fluid > div.title {
+    padding: 0;
+    margin: 0;
+  }
+  .container-fluid > div.title > h2 {
+    margin: 10% 0 2%;
+    font-size: 250%;
+  }
 }
