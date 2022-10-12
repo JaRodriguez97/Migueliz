@@ -4,13 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="./menu.js"></script>
     <!-- CSS only -->
-    <link rel="stylesheet" href="./menu.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
     <link
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./menu.css" />
+    <link rel="icon" type="image/x-icon" href="/assets/images/burguer.png" />
     <title>Menú</title>
   </head>
   <body>
@@ -26,8 +30,8 @@
     </header>
     <section class="wrap">
       <div class="container-fluid">
-        <div class="container">
-          <div class="row">
+        <div class="container" id="container">
+          <div class="row" id="row">
             <div class="col-sm-4">
               <div class="price-table">
                 <div class="price-head">
@@ -59,12 +63,12 @@
                 </div>
                 <div class="price-content">
                   <ul>
-                    <li>Peso: 1.5KG</li>
+                    <li><u> Peso: </u> 1.5KG</li>
                     <li>
-                      Ingredientes: Lorem ipsum dolor sit, amet consectetur
-                      adipisicing elit.
+                      <u> Ingredientes: </u> Lorem ipsum dolor sit, amet
+                      consectetur adipisicing elit.
                     </li>
-                    <li>Incluye: papas gaseosa</li>
+                    <li><u> Incluye: </u> papas gaseosa</li>
                     <li>¡SOLO POR HOY!</li>
                   </ul>
                 </div>
@@ -82,12 +86,12 @@
                 </div>
                 <div class="price-content">
                   <ul>
-                    <li>Peso: 1KG</li>
+                    <li><u>Peso:</u> 1KG</li>
                     <li>
-                      Ingredientes: Lorem ipsum dolor sit, amet consectetur
-                      adipisicing elit.
+                      <u>Ingredientes:</u> Lorem ipsum dolor sit, amet
+                      consectetur adipisicing elit.
                     </li>
-                    <li>Incluye: papas gaseosa</li>
+                    <li><u>Incluye:</u> papas gaseosa</li>
                     <li>¡SOLO POR HOY!</li>
                   </ul>
                 </div>
@@ -102,4 +106,6 @@
     </section>
     <section class="wrap"></section>
   </body>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="./menu.js"></script>
 </html>
