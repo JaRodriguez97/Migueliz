@@ -101,6 +101,7 @@ header.sticky > ul > li > a {
   color: #fff;
   font-size: 350%;
   -webkit-text-stroke: 1px #444;
+  text-shadow: 3px 3px 1px rgb(255, 3, 3);
 }
 
 #section {
@@ -108,9 +109,10 @@ header.sticky > ul > li > a {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 1), transparent),
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(/assets/images/backgrounds/adicionPapas.jpg);
-  background-size: 100% 100%;
+  background-size: 200px 200px;
+  background-repeat: repeat;
 }
 
 .containerBg {
@@ -124,13 +126,21 @@ header.sticky > ul > li > a {
 
 .containerBg > .card {
   width: 100%;
-  background: #fff;
+  background: radial-gradient(
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.5)
+  );
+  border-radius: 5%;
+  border: solid 1px #fff;
+  box-shadow: 5px 5px 1px rgba(255, 255, 255, 0.8);
 }
 
 .containerBg > .card > .imgBx {
   position: relative;
   width: 100%;
   height: 310px;
+  border-radius: 5%;
   overflow: hidden;
 }
 
@@ -146,8 +156,94 @@ header.sticky > ul > li > a {
 }
 
 .containerBg > .card:active > .imgBx > img,
+.containerBg > .card:focus > .imgBx > img,
 .containerBg > .card:hover > .imgBx > img {
   transform: scale(1.5);
+}
+
+.containerBg > .card > .imgBx > .action {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.containerBg > .card:active > .imgBx > .action > li,
+.containerBg > .card:focus > .imgBx > .action > li,
+.containerBg > .card:hover > .imgBx > .action > li {
+  transform: translateX(0);
+}
+
+.action > li {
+  position: relative;
+  list-style: none;
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.8)
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1px;
+  cursor: pointer;
+  border-radius: 6px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  transition: 500ms;
+  transform: translateX(60px);
+}
+
+.action > li:nth-child(2) {
+  transition-delay: 150ms;
+}
+
+.action > li:nth-child(3) {
+  transition-delay: 300ms;
+}
+
+.action > li:hover {
+  background: #ff2020;
+  color: #fff;
+  transition-delay: 0ms;
+}
+
+.action > li.active {
+  background: #ff2020;
+  color: #fff;
+}
+
+.action > li > span {
+  position: absolute;
+  top: 50%;
+  right: 50px;
+  transform: translateY(-50%) translateX(-20px);
+  white-space: nowrap;
+  padding: 4px 6px;
+  background: #fff;
+  color: #333;
+  font-weight: 500;
+  font-size: 12px;
+  border-radius: 6px;
+  pointer-events: none;
+  opacity: 0;
+  transition: 500ms;
+}
+
+.action > li:hover > span {
+  transform: translateY(-50%) translateX(0px);
+  opacity: 1;
+}
+
+.action > li > span::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -4px;
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  transform: translateY(-50%) rotate(45deg);
 }
 
 .containerBg > .card > .content {
@@ -157,7 +253,7 @@ header.sticky > ul > li > a {
 .containerBg > .card > .content > .productName > h3 {
   font-size: 18px;
   font-weight: 500;
-  color: #333;
+  color: #fff;
   margin: 5px 0;
 }
 
@@ -169,17 +265,17 @@ header.sticky > ul > li > a {
 
 .containerBg > .card > .content > .priceRating > h2 {
   font-size: 20px;
-  color: #ff2020;
+  color: #000;
   font-weight: 500;
 }
 
-.containerBg > .card > .content > .priceRating .fa {
+.content > .priceRating > .rating > .fa {
   color: #ffd513;
   cursor: pointer;
 }
 
-.containerBg > .card > .content > .priceRating .fa.grey {
-  color: #ccc;
+.content > .priceRating > .rating > .fa.grey {
+  color: #fff;
 }
 
 .swiper-container {
@@ -218,6 +314,7 @@ header.sticky > ul > li > a {
   background-position: 50% 30% !important;
   background-size: cover !important;
   -webkit-text-stroke: 0.5px #db0000;
+  cursor: pointer;
 }
 
 .col-sm-4:nth-child(1) > .price-table > .price-head {
@@ -263,7 +360,7 @@ header.sticky > ul > li > a {
   text-transform: uppercase;
   padding: 1% 10%;
   color: #555;
-  cursor: pointer;
+  cursor:default;
   transition: 800ms;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
@@ -308,5 +405,8 @@ header.sticky > ul > li > a {
   .container-fluid > div.title > h2 {
     margin: 10% 0 2%;
     font-size: 250%;
+  }
+  .containerBg > .card > .imgBx > .action > li {
+    transform: translateX(0);
   }
 }

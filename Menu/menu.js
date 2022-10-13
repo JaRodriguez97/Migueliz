@@ -57,3 +57,25 @@ mediaScreen();
 window.addEventListener("resize", mediaScreen);
 
 swiper = new Swiper(".swiper-container", config);
+
+function getDetails(p) {
+  let content = document.getElementsByClassName("content"),
+    children = content[p].children;
+
+  alert(
+    `
+    Nombre plato: ${children[0].children[0].innerText}
+
+    foto
+
+    Ref: ${children[0].children[1].innerText}
+
+    descripción: Lorem ipsum dolor, sit amet consectetur adipisicing
+    elit. Qui Dexercitationem id aperiam. Iste perspiciatis dignissimos
+    ad, ea, non qui sapiente omnis labore commodi ut voluptates,
+    molestiae unde optio aut vel?
+    
+    precio: ${children[1].children[0].innerText}
+    `
+  );
+}
