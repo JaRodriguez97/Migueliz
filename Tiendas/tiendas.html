@@ -1,1 +1,66 @@
-<h1>hola tiendas</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./Tiendas.js"></script>
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    />
+    <link rel="stylesheet" href="tiendas.css" />
+    <title>Tiendas</title>
+  </head>
+  <body>
+    <div class="header"></div>
+    <div class="container">
+      <div class="title">
+        <h2>Te esperamos en alguna de nuestras sedes</h2>
+      </div>
+      <div class="containerMap">
+        <iframe
+          id="map"
+          width="600"
+          height="100%"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+        <!--
+src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15930.946742673324!2d
+-76.53726195000002!3d3.4142246000000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sco!4v1666123832808!5m2!1ses!2sco"
+         -->
+      </div>
+      <div class="reservas">
+        <button type="submit">Reserva ya!</button>
+      </div>
+      <div class="containerTiendas">
+        <ul class="tiendas">
+          <li onclick="getTienda('sanLuis')">
+            <div class="title">San luis 2</div>
+            <div class="containerPosition">
+              <p><label for="direccion">Dirección:</label>
+              Carrera 83 # 43 - 15</p>
+              <p><label for="telefono">Teléfono:</label>
+              324-397-3949</p>
+              <label for="calificacion">Calificación:</label>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+            </div>
+          </li>
+          <li onclick="getTienda('alcazares')">Alcazares</li>
+          <li onclick="getTienda('centro')">Centro</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

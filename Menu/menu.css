@@ -36,7 +36,7 @@ header.sticky {
 header > .logo {
   font-size: 40px;
   font-family: "Harlow Solid Italic";
-  color: rgb(254, 254, 153);
+  color: rgb(255, 255, 153);
   -webkit-text-stroke: 1px #f87c00;
 }
 
