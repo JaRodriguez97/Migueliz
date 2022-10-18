@@ -118,20 +118,18 @@ div > div.title {
   padding: 2%;
   color: whitesmoke;
   transition: 500ms;
-  margin: 2%;
+  margin: 1%;
   z-index: 0;
 }
 
 .container > .containerTiendas > .tiendas > li:hover {
   box-shadow: 5px 4px 0 rgba(255, 255, 255, 1);
-  filter: grayscale();
-  transform: translate(-10px, -10px);
-  height: 1000%;
-  font-size: 130%;
+  /* filter:brightness(1); */
+  transform: scale(1.1);
 }
 
 .containerTiendas > .tiendas > li > .title {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 1);
   border: 0.5px solid rgba(255, 255, 255, 1);
   border-radius: 5px;
   color: #000;
@@ -142,8 +140,8 @@ div > div.title {
   position: relative;
   display: flex;
   gap: 20px;
-  bottom: -30%;
-  margin: 3%;
+  bottom: -20%;
+  margin: 1.5% 3%;
   background: rgba(255, 255, 255, 0.2);
   border: 0.5px solid rgba(255, 255, 255, 1);
   border-radius: 5px;
@@ -155,4 +153,12 @@ div > div.title {
   white-space: pre-line;
   margin: 0 5%;
   margin-left: 0;
+}
+
+.tiendas > li > .containerPosition > p > label {
+  margin: 0;
+}
+
+.tiendas > li > .containerPosition > p.rating {
+  white-space: nowrap;
 }
