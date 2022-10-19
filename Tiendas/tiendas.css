@@ -11,6 +11,7 @@ body {
   background: url(/assets/images/backgrounds/bg3.jpg);
   background-size: 100% 100%;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 .header {
@@ -22,8 +23,8 @@ body {
   position: absolute;
   align-items: center;
   display: flex;
-  min-height: 100vh;
-  min-width: 100vw;
+  height: 100vh;
+  width: 100vw;
   background: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
 
@@ -35,14 +36,14 @@ div.title {
 }
 
 div > div.title {
-  top: 0;
+  top: -4%;
 }
 
 .container > .title > h2 {
   color: #fff;
   font-size: 200%;
   font-weight: revert;
-  text-shadow: 50px 50px 3px #ddd;
+  text-shadow: 50px 30px 3px #ddd;
   transform: rotate(-5deg);
   transition: 500ms;
 }
@@ -50,9 +51,10 @@ div > div.title {
 .container > .containerMap {
   position: absolute;
   margin-bottom: 1%;
-  height: 90vh;
+  height: 90%;
   top: 0;
   right: 6px;
+  width: 40%;
 }
 
 .container > .containerMap > iframe {
@@ -60,21 +62,22 @@ div > div.title {
   border: solid rgba(100, 100, 100, 1) 1px !important;
   box-shadow: 5px 5px 1px rgba(255 255 255 / 80%);
   transition: 500ms;
+  width: 100%;
 }
 
 .container > .reservas {
   position: absolute;
-  top: 10vh;
-  left: 70vh;
+  bottom: 10%;
+  left: 35%;
   margin: 1%;
-  padding: 1%;
+  padding: 0;
   transition: 500ms;
   width: 15%;
+  z-index: 1000;
 }
 
 .container > .reservas > button {
   padding: 3% 10%;
-  margin: 10%;
   border-radius: 20px;
   box-shadow: inset -5px -5px 5px rgb(0 0 0 / 20%),
     5px 5px 0 rgba(255, 255, 255, 1);
@@ -92,16 +95,15 @@ div > div.title {
 .container > .containerTiendas {
   position: absolute;
   left: 4%;
-  bottom: 10%;
-  height: 60vh;
-  width: 90vh;
+  top: 20%;
+  height: 100%;
+  width: 45%;
 }
 
 .container > .containerTiendas > .tiendas {
   position: absolute;
-  display: none;
   display: flex;
-  min-width: 100%;
+  width: 100%;
   list-style: none;
   flex-direction: column;
   transition: 500ms;
@@ -111,7 +113,7 @@ div > div.title {
 .container > .containerTiendas > .tiendas > li {
   background: rgba(255, 255, 255, 0.2);
   width: 100%;
-  height: 200%;
+  max-height: 200%;
   border: 0.5px solid rgba(255, 255, 255, 1);
   border-radius: 20px;
   cursor: pointer;
@@ -124,7 +126,7 @@ div > div.title {
 
 .container > .containerTiendas > .tiendas > li:hover {
   box-shadow: 5px 4px 0 rgba(255, 255, 255, 1);
-  /* filter:brightness(1); */
+  background: rgba(0, 0, 0, 0.6);
   transform: scale(1.1);
 }
 
@@ -136,29 +138,81 @@ div > div.title {
   text-transform: uppercase;
 }
 
+.containerTiendas > .tiendas > li:hover > .title {
+  font-weight: bold !important;
+}
+
 .containerTiendas > .tiendas > li > .containerPosition {
   position: relative;
   display: flex;
-  gap: 20px;
+  gap: 20%;
   bottom: -20%;
-  margin: 1.5% 3%;
+  margin: 2% 3%;
   background: rgba(255, 255, 255, 0.2);
   border: 0.5px solid rgba(255, 255, 255, 1);
   border-radius: 5px;
   color: #000;
   padding: 2%;
+  align-items: center;
+}
+
+.containerTiendas > .tiendas > li:hover > .containerPosition {
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .containerTiendas > .tiendas > li > .containerPosition > p {
   white-space: pre-line;
-  margin: 0 5%;
-  margin-left: 0;
+  height: 100%;
 }
-
+.containerTiendas > .tiendas > li > .containerPosition > p,
+.tiendas > li > .containerPosition > label,
 .tiendas > li > .containerPosition > p > label {
   margin: 0;
 }
 
-.tiendas > li > .containerPosition > p.rating {
+.tiendas > li > .containerPosition > label > p.rating {
   white-space: nowrap;
+  margin: 0 !important;
+}
+
+@media (max-width: 1281px) {
+  .containerTiendas > .tiendas > li > .containerPosition {
+    gap: 15%;
+  }
+}
+@media (max-width: 1100px) {
+  .containerTiendas > .tiendas > li > .containerPosition {
+    gap: 10%;
+    margin: 3%;
+  }
+}
+@media (max-width: 1024px) {
+  .container > .title > h2 {
+    font-size: 150%;
+  }
+  .container > .reservas > button {
+    padding: 5%;
+  }
+  .container > .containerTiendas {
+    width: 55%;
+  }
+}
+@media (max-width: 860px) {
+  /* .container > .title > h2 {
+    font-size: 150%;
+  }
+  .container > .reservas > button {
+    padding: 5%;
+  }
+  .container > .containerTiendas {
+    width: 55%;
+  } */
+  .container > .containerMap {
+    margin: 0;
+    height: 40%;
+    width: 99%;
+    bottom: 11%;
+    top: auto;
+    right: 6px;
+  }
 }
