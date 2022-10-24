@@ -24,6 +24,9 @@ let container = document.getElementById("container"),
   },
   swiper;
 
+/* Listening for the window to resize and then calling the mediaScreen function. */
+window.addEventListener("resize", mediaScreen);
+
 /**
  * If the screen is greater than 991px, remove the swiper classes and add the row class. If the screen
  * is less than 991px, add the swiper classes and remove the row class
@@ -52,9 +55,6 @@ function mediaScreen() {
 
 /* Calling the function. */
 mediaScreen();
-
-/* Listening for the window to resize and then calling the mediaScreen function. */
-window.addEventListener("resize", mediaScreen);
 
 swiper = new Swiper(".swiper-container", config);
 
